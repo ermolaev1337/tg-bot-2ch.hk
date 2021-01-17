@@ -1,0 +1,11 @@
+version: '2'
+services:
+  tg-bot-2ch:
+    working_dir: /usr/app/
+    image: node:latest
+    command: bash -c "npm i && npm run start"
+    volumes:
+      - .:/usr/app/
+    tty: true
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
